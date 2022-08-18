@@ -1,0 +1,223 @@
+:root {
+  --dark: #374151;
+  --darker: #1f2937;
+  --darkest: #111827;
+  --grey: #6b7280;
+  --pink: #fe0581;
+  --purple: #4c00ff;
+  --light: #eee;
+  --foreground: #222324;
+  --background: #f2f3f5;
+  --card-foreground: #fff;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fira sans", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --foreground: #fff;
+    --background: #000;
+    --card-foreground: #222324;
+  }
+}
+
+header {
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+
+  background: linear-gradient(218deg, #ff008a, #d700ff, #007bff, #00fff1);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 13s ease infinite;
+  -moz-animation: AnimationName 13s ease infinite;
+  -o-animation: AnimationName 13s ease infinite;
+  animation: AnimationName 13s ease infinite;
+
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.2);
+  /* linear-gradient(218deg, #ff008a, #d700ff, #007bff, #00fff1); */
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 1rem;
+  font: bolder 2rem "Fira sans", sans-serif;
+}
+
+#new-task-form {
+  display: flex;
+}
+
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+#new-task-input {
+  flex: 1 1 0%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-right: 1rem;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#new-task-input::placeholder {
+  color: rgba(255, 255, 255, 1);
+  mix-blend-mode: overlay;
+}
+
+#new-task-submit {
+  color: white;
+  background-color: white;
+  color: var(--dark);
+  border-radius: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.4s ease-out;
+}
+
+#new-task-submit:hover {
+  opacity: 0.8;
+}
+
+#new-task-submit:active {
+  opacity: 0.6;
+}
+
+main {
+  flex: 1 1 0%;
+  width: 100%;
+  padding: 2rem;
+}
+
+.task-list h2 {
+  color: var(--foreground);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.tasks-shadow {
+  border-radius: 0.75rem;
+  box-shadow: 0px 12px 40px rgba(40, 40, 40, 0.16);
+}
+
+#tasks {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+#tasks .task {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--card-foreground);
+  padding: 1rem;
+  color: var(--foreground);
+  border-bottom: 1px solid hsl(0, 0%, 95%);
+}
+
+.task .content {
+  flex: 1 1 0%;
+}
+
+.task .content .text {
+  width: 100%;
+  display: block;
+  color: var(--foreground);
+}
+
+.task .actions {
+  display: flex;
+  margin: 0 -0.5rem;
+}
+
+.task .actions button {
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.task .actions button:hover {
+  opacity: 0.8;
+}
+
+.task .actions button:active {
+  opacity: 0.6;
+}
+
+.task .actions .edit {
+  background-image: linear-gradient(to right, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.task .actions .delete {
+  color: crimson;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 60% 0%;
+  }
+  50% {
+    background-position: 41% 100%;
+  }
+  100% {
+    background-position: 60% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 60% 0%;
+  }
+  50% {
+    background-position: 41% 100%;
+  }
+  100% {
+    background-position: 60% 0%;
+  }
+}
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 60% 0%;
+  }
+  50% {
+    background-position: 41% 100%;
+  }
+  100% {
+    background-position: 60% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 60% 0%;
+  }
+  50% {
+    background-position: 41% 100%;
+  }
+  100% {
+    background-position: 60% 0%;
+  }
+}
